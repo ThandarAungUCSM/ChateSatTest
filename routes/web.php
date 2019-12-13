@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/trip', 'TripDataController@getData')->name('trip');
+
+Route::get('/{any}', 'TripDataController@index')->where('any', '.*');

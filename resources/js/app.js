@@ -5,8 +5,13 @@
  */
 
 require('./bootstrap');
+import Vue from 'vue';
+import Vuex from 'vuex';
+import Routes from '@/js/routes.js';
 
-window.Vue = require('vue');
+import App from '@/js/views/App';
+
+Vue.use(Vuex);
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,4 +34,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router: Routes,
+    render: h => h(App)
 });
+
+export default app;

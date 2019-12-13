@@ -12,35 +12,19 @@ class TripDataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        // $tripData = TripData;
-        // return view("trip", compact("tripData"));
-
-        return view("trip");
-    }
-    // public function data(){
-    //     $foods = TripData::query();
-    //     return DataTables::of($foods)->make(true);   
+    // public function index()
+    // {
+    //     return view("trip");
     // }
 
     public function getData(){
-        // $trips = TripData::query();
-        // return view("trip.index", compact("trips"));
         $trips = TripData::get();
         return view("trip.index", compact("trips"));
     }
 
-
-    // public function index()
-    // {
-    //     //
-    //     $products = Product::paginate(10);
-    //     return view("product.index", compact("products"));
-    // }
-
-   
+    public function index() {
+        return view('app');
+    }
 
 
 }
